@@ -25,22 +25,24 @@ class Bact
   {
     myX = 150;
     myY = 150;
-    myColor = 0;
   }
   void move()
   {
     myX = myX + (int)(Math.random()*3)-1;
     myY = myY + (int)(Math.random()*3)-1;
-    myColor = (int)(Math.random()*256);
   }
   void show()
   {
     noStroke();
-    fill(myColor,myColor,myColor);
-    ellipse(myX,myY,20,20);
+    background((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+    fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+    ellipse(myX,myY,50,50);
+    ellipse(myX+25,myY+25,50,50);
+    ellipse(myX-25,myY-25,50,50);
+    ellipse(myX-25,myY+25,50,50);
+    ellipse(myX+25,myY-25,50,50);
   }
   void mousePressed()
   {
     redraw();
   }
-}
