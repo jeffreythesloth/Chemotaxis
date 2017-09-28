@@ -15,21 +15,24 @@ void draw()
   {
     circles[i].move();
     circles[i].show();
-    circles[i].mousePressed();
   }
 }
 class Bact
 {
-  int myX,myY,myColor;
+  int myX,myY,myXX,myYY;
   Bact()
   {
-    myX = 150;
-    myY = 150;
+    myX = 75;
+    myY = 75;
+    myXX = 225;
+    myYY = 225;
   }
   void move()
   {
     myX = myX + (int)(Math.random()*3)-1;
     myY = myY + (int)(Math.random()*3)-1;
+    myXX = myXX + (int)(Math.random()*3)-1;
+    myYY = myYY + (int)(Math.random()*3)-1;
   }
   void show()
   {
@@ -41,8 +44,11 @@ class Bact
     ellipse(myX-25,myY-25,50,50);
     ellipse(myX-25,myY+25,50,50);
     ellipse(myX+25,myY-25,50,50);
+    
+    ellipse(myXX,myYY,50,50);
+    ellipse(myXX+25,myYY+25,50,50);
+    ellipse(myXX-25,myYY-25,50,50);
+    ellipse(myXX-25,myYY+25,50,50);
+    ellipse(myXX+25,myYY-25,50,50);
   }
-  void mousePressed()
-  {
-    redraw();
-  }
+}
